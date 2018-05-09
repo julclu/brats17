@@ -1,5 +1,5 @@
 [data]
-data_root             = /home/guotwang/data/Brats17TrainingData
+data_root             = /bigdisks/ucsf/MICCAI_BraTS17_Data_Training
 data_names            = config17/train_names_all.txt
 modality_postfix      = [flair, t1, t1ce, t2]
 label_postfix         = seg
@@ -15,14 +15,23 @@ train_with_roi_patch  = False
 label_roi_mask        = 
 roi_patch_margin      = 
 
+[system]
+cuda_devices = ""
+num_threads = 2
+num_gpus = 1
+model_dir = /home/sf673542/BrainiacsNiftyNet/brats17/model17/model17_jgc
+queue_length = 40
+
 [network]
 net_type            = MSNet
 net_name            = MSNet_WT32
 downsample_twice    = True
 class_num           = 2
+activation_function = prelu
 
 [training]
 learning_rate      = 1e-3
+loss_type	   = Dice
 decay              = 1e-7
 maximal_iteration  = 20000
 snapshot_iteration = 5000
