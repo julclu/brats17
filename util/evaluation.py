@@ -15,7 +15,7 @@ sys.path.append('./')
 import numpy as np
 from util.data_process import load_3d_volume_as_array, binary_dice3d
 
-def get_ground_truth_names(g_folder, patient_names_file, year = 15):
+def get_ground_truth_names(g_folder, patient_names_file, year = 17):
     assert(year==15 or year == 17)
     with open(patient_names_file) as f:
             content = f.readlines()
@@ -71,16 +71,16 @@ def dice_of_brats_data_set(gt_names, seg_names, type_idx):
     return dice_all_data
     
 if __name__ == '__main__':
-    year = 15 # or 17
+    year = 17 # or 17
     
     if(year == 15):
         s_folder = 'result15'
         g_folder = '/bigdisks/ucsf/MICCAI_BraTS17_Data_Training'
-        patient_names_file = 'config15/test_names.txt'
+        patient_names_file = 'config15/test_names_total.txt'
     else:
         s_folder = 'result17'
         g_folder = '/bigdisks/ucsf/MICCAI_BraTS17_Data_Training'
-        patient_names_file = 'config15/test_names.txt'
+        patient_names_file = 'config17/test_names_total.txt'
 
     test_types = ['whole','core', 'all']
     gt_names  = get_ground_truth_names(g_folder, patient_names_file, year)

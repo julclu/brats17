@@ -76,6 +76,7 @@ class DataLoader():
                 if(mod+'.' in img_file_dir):
                     volume_name = img_file_dir + '/' + img_file_dir + '.' + self.file_postfix
                     break
+        print('patient name %s' % patient_name)
         assert(volume_name is not None)
         volume_name = os.path.join(patient_dir, volume_name)
         volume = load_3d_volume_as_array(volume_name)
