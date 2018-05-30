@@ -1,0 +1,2 @@
+# Ignore niftynet image files.
+*.nii.gz
