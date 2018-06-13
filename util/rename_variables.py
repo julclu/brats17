@@ -30,7 +30,8 @@ def rename(checkpoint_from, checkpoint_to, replace_from, replace_to):
         saver.save(sess, checkpoint_to)
 
 if __name__ == '__main__':
-    year = 15
+    #year = 15
+    year = 17
     net_name   = ['wt', 'tc', 'en']
     net_name_c = ['WT', 'TC', 'EN']
     num_pretrain = [10000, 20000, 20000]
